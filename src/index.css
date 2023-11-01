@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+body,
+input,
+button,
+textarea {
+  font-size: 1.6rem;
+}
+
+button {
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+  font-weight: 400;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
