@@ -12,7 +12,7 @@ function HomePage() {
       {error && (
         <p>
           {error.message}
-          <Link to="/auth" />
+          <Link to="/auth">Login</Link>
         </p>
       )}
       {user && (
