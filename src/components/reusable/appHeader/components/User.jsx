@@ -7,7 +7,6 @@ import Button from "../../buttton/Button";
 import styles from "./User.module.css";
 
 // STATIC ASSETS
-import profileDefault from "../../../../assets/profileDefault.webp";
 import { useState } from "react";
 import { useUser } from "../../../../contexts/AuthContext";
 import LogoutButton from "./LogoutButton";
