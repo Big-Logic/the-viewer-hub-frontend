@@ -25,7 +25,6 @@ function App() {
     <UserProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
           <Route path="/post" element={<PostPage />} />
           <Route path="/user" element={<UserPage />}>
             <Route index element={<UserPosts />} />
@@ -36,6 +35,7 @@ function App() {
             <Route path="signup" element={<Signup />} />
           </Route>
           <Route path="/setting" element={<SettingPage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="*" element={<p>Nothing was found at this route</p>} />
         </Routes>
       </BrowserRouter>
