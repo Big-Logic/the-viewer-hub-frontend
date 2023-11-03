@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,900&display=swap");
-
+:root {
+  --primary-bg-color: #22668d;
+  --primary-foreground-color: #fff;
+  --text-color: #454545;
+  --bold-text-color: #030a0e;
+  --input-focus-bg: #e3e6e8;
+  --link-color: #4e85a4;
+  --color-tint: #e9f0f4;
+  --color-mid-tint: #bdd1dd;
+}
 *,
 *::before,
 *::after {
@@ -15,14 +24,29 @@ html {
 body {
   line-height: 1.2;
   font-weight: 400;
+  color: var(--text-color);
+  background-color: #fff;
 }
 
 body,
 input,
 button,
-textarea {
+textarea,
+select {
   font-size: 1.6rem;
   font-family: "Lato", sans-serif;
+}
+
+input,
+textarea,
+select {
+  background-color: var(--input-focus-bg);
+  border: 1px solid var(--primary-foreground-color);
+}
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-bg-color);
 }
 
 button {
@@ -31,9 +55,24 @@ button {
   background-color: transparent;
   font-weight: 400;
   cursor: pointer;
-  font-weight: 400;
 }
 
-a {
+a:link,
+a:visited {
   text-decoration: none;
+  color: var(--link-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--bold-text-color);
+}
+
+.cta {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-foreground-color);
 }

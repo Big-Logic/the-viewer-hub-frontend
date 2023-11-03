@@ -53,7 +53,7 @@ function Signup() {
   return (
     <>
       <Error msg={error} />
-      <Form title="Signup Now" handleSubmit={handleSubmit}>
+      <Form title="Auth Signup Form" handleSubmit={handleSubmit}>
         <Input
           inputPlacehoder="FirstName"
           inputRef={firstNameRef}
@@ -78,7 +78,7 @@ function Signup() {
         />
         <Input
           inputType="date"
-          inputPlacehoder="Date of Birth"
+          inputPlacehoder="MM/DD/YYYY"
           inputRef={birthDateRef}
           labelText="Date of Birth"
         />

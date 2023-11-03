@@ -11,11 +11,11 @@ function HomePage() {
     <>
       {isLoading && <p>Loading</p>}
       {error && <Login allowRedirect={false} />}
-      {user && (
+      {!error && !isLoading && user && (
         <>
           <AppHeader />
           <MainContainer>
-          <p>Hooray!! home page</p>
+            <p>Hooray!! home page</p>
           </MainContainer>
           <AppFooter />
         </>

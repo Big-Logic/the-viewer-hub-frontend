@@ -12,7 +12,7 @@ function UserPage() {
     <>
       {isLoading && <p>Loading</p>}
       {error && <Login allowRedirect={false} />}
-      {user && (
+      {!error && !isLoading && user && (
         <>
           <AppHeader />
           <MainContainer>

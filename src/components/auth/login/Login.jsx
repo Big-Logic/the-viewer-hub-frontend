@@ -47,7 +47,7 @@ function Login({ allowRedirect }) {
     <>
       <Error msg={error} />
       <SectionContainer customClass={styles.section}>
-        <Form title="Login Now" handleSubmit={handleSubmit}>
+        <Form title="Auth Login Form" handleSubmit={handleSubmit}>
           <Input
             inputType="email"
             inputPlacehoder="Email"

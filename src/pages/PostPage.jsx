@@ -11,12 +11,11 @@ function PostPage() {
     <>
       {isLoading && <p>Loading</p>}
       {error && <Login allowRedirect={false} />}
-      {user && (
+      {!error && !isLoading && user && (
         <>
           <AppHeader />
           <MainContainer>
-
-          <p>Hooray!! post page</p>
+            <p>Hooray!! post page</p>
           </MainContainer>
           <AppFooter />
         </>
