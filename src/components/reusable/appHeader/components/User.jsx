@@ -1,16 +1,17 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 // COMPONENTS
 import Button from "../../buttton/Button";
+import { useUser } from "../../../../contexts/AuthContext";
+import LogoutButton from "./LogoutButton";
 
 // CSS STYLES
 import styles from "./User.module.css";
 
 // STATIC ASSETS
-import profileDefault from "../../../../assets/profileDefault.webp";
-import { useState } from "react";
-import { useUser } from "../../../../contexts/AuthContext";
-import LogoutButton from "./LogoutButton";
+import profileDefault from "./profileDefault.webp";
+
 function User() {
   const {
     user: {
