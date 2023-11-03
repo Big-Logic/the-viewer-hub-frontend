@@ -10,7 +10,7 @@ import LogoutButton from "./LogoutButton";
 import styles from "./User.module.css";
 
 // STATIC ASSETS
-import profileDefault from "./profileDefault.webp";
+import profileDefault from "./../../../../assets/profileDefault.webp";
 
 function User() {
   const {
