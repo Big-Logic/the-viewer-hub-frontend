@@ -9,9 +9,8 @@ import LogoutButton from "./LogoutButton";
 // CSS STYLES
 import styles from "./User.module.css";
 
-// STATIC ASSETS
-import profileDefault from "./../../../../assets/profileDefault.webp";
-
+const profileDefault =
+  "https://res.cloudinary.com/dy287fhyg/image/upload/v1699014386/profiledefault_qie9w2.webp";
 function User() {
   const {
     user: {
