@@ -1,9 +1,20 @@
 import { useEffect, useState, useRef } from "react";
 import { useUser } from "../../../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-function Login() {
-  const [userObject, setUseObject] = useState(null);
+// COMPONENTS
+import Input from "../components/Input";
+import LinksContainer from "../components/LinksContainer";
+import Form from "../components/Form";
+import Button from "../components/Button";
+import Error from "../components/Error";
+import SectionContainer from "../../reusable/sectionContainer/SectionContainer";
+
+// STYLES
+import styles from "./Login.module.css";
+
+function Login({ allowRedirect }) {
+  const [userObject, setUserObject] = useState(null);
   const { login, isLoading, error } = useUser();
   const navigate = useNavigate();
   useEffect(
@@ -11,8 +22,10 @@ function Login() {
       if (userObject) {
         (async function () {
           const res = await login(userObject);
-          if (res) {
-            navigate("/", { replace: true });
+          if (allowRedirect) {
+            if (res) {
+              navigate("/", { replace: true });
+            }
           }
         })();
       }
@@ -25,34 +38,43 @@ function Login() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log({
-      email: emailRef.current.value,
-      password: passwordRef.current.value,
-    });
-
-    setUseObject({
+    setUserObject({
       email: emailRef.current.value,
       password: passwordRef.current.value,
     });
   }
   return (
-    <form onSubmit={handleSubmit}>
-      {error && <h2>Hi</h2>}
-      <div>
-        <input type="email" placeholder="Email" ref={emailRef} required />
-      </div>
-      <div>
-        <input
-          type="password"
-          placeholder="Password"
-          ref={passwordRef}
-          required
-        />
-      </div>
-      <div>
-        <button type="submit">Login</button>
-      </div>
-    </form>
+    <>
+      <Error msg={error} />
+      <SectionContainer customClass={styles.section}>
+        <Form title="Login Now" handleSubmit={handleSubmit}>
+          <Input
+            inputType="email"
+            inputPlacehoder="Email"
+            inputRef={emailRef}
+            isRequired={true}
+            labelText="Email"
+          />
+          <Input
+            inputType="password"
+            inputPlacehoder="Password"
+            inputRef={passwordRef}
+            isRequired={true}
+            labelText="Password"
+          />
+
+          <Button loading={isLoading}>Login</Button>
+          <LinksContainer>
+            <div>
+              <Link to="/auth/forgotpassword">Forgot password?</Link>
+            </div>
+            <div>
+              <Link to="/auth/signup">Don't have an account?</Link>
+            </div>
+          </LinksContainer>
+        </Form>
+      </SectionContainer>
+    </>
   );
 }
 

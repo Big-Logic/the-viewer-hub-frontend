@@ -7,6 +7,7 @@ import Button from "../../buttton/Button";
 import styles from "./User.module.css";
 
 // STATIC ASSETS
+import profileDefault from "../../../../assets/profileDefault.webp";
 import { useState } from "react";
 import { useUser } from "../../../../contexts/AuthContext";
 import LogoutButton from "./LogoutButton";
@@ -24,7 +25,11 @@ function User() {
     <div className={styles.container}>
       <Button handleClick={handleClick} customClass={styles.userBtn}>
         <div className={styles.userImageContainer}>
-          <img src={url} alt="User" className={styles.userImage} />
+          <img
+            src={url || profileDefault}
+            alt="User"
+            className={styles.userImage}
+          />
         </div>
         <span
           className={`${styles.arrowDown} ${

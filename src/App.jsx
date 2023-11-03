@@ -31,7 +31,7 @@ function App() {
             <Route path="about" element={<UserProfile />} />
           </Route>
           <Route path="/auth" element={<AuthPage />}>
-            <Route index element={<Login />} />
+            <Route index element={<Login allowRedirect={true} />} />
             <Route path="signup" element={<Signup />} />
           </Route>
           <Route path="/setting" element={<SettingPage />} />

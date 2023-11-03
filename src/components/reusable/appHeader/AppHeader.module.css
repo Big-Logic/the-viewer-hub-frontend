@@ -5,11 +5,10 @@
 
 .nav {
   display: grid;
-  grid-template-columns: 20rem 1fr;
+  grid-template-columns: 8rem 1fr;
   align-items: center;
-  max-width: 120rem;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .headerItemsContainer {

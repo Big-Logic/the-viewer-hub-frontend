@@ -1,5 +1,7 @@
+import Login from "../components/auth/login/Login";
 import AppFooter from "../components/reusable/appFooter/AppFooter";
 import AppHeader from "../components/reusable/appHeader/AppHeader";
+import MainContainer from "../components/reusable/mainContainer/MainContainer";
 import useLoginedUser from "../hooks/useLoginedUser";
 
 function PostPage() {
@@ -8,11 +10,14 @@ function PostPage() {
   return (
     <>
       {isLoading && <p>Loading</p>}
-      {error && <p>{error.message}</p>}
+      {error && <Login allowRedirect={false} />}
       {user && (
         <>
           <AppHeader />
+          <MainContainer>
+
           <p>Hooray!! post page</p>
+          </MainContainer>
           <AppFooter />
         </>
       )}
