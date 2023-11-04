@@ -1,4 +1,5 @@
 import Login from "../components/auth/login/Login";
+import Loader from "../components/reusable/Loader/Loader";
 import AppFooter from "../components/reusable/appFooter/AppFooter";
 import AppHeader from "../components/reusable/appHeader/AppHeader";
 import MainContainer from "../components/reusable/mainContainer/MainContainer";
@@ -9,7 +10,7 @@ function PostPage() {
 
   return (
     <>
-      {isLoading && <p>Loading</p>}
+      {isLoading && <Loader />}
       {error && <Login allowRedirect={false} />}
       {!error && !isLoading && user && (
         <>

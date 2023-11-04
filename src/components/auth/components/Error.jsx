@@ -16,7 +16,7 @@ function Error({ msg }) {
           <p>{errorMsg.message}</p>
           <div>
             <button onClick={() => setErrMsg("")} className={styles.closeBtn}>
-              &times;
+              <i className="las la-times"></i>
             </button>
           </div>
         </div>

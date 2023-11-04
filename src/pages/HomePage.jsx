@@ -3,14 +3,26 @@ import AppHeader from "../components/reusable/appHeader/AppHeader";
 import useLoginedUser from "../hooks/useLoginedUser";
 import Login from "../components/auth/login/Login";
 import MainContainer from "../components/reusable/mainContainer/MainContainer";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import Loader from "../components/reusable/Loader/Loader";
 
 function HomePage() {
   const [user, isLoading, error] = useLoginedUser();
+  const navigate = useNavigate();
+  useEffect(
+    function () {
+      if (error) {
+        navigate("/auth", { replace: true });
+      }
+    },
+    [error]
+  );
 
   return (
     <>
-      {isLoading && <p>Loading</p>}
-      {error && <Login allowRedirect={false} />}
+      {isLoading && <Loader />}
+      {/* {error && <Login allowRedirect={false} />} */}
       {!error && !isLoading && user && (
         <>
           <AppHeader />

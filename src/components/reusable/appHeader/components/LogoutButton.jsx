@@ -3,6 +3,9 @@ import { useUser } from "../../../../contexts/AuthContext";
 import Button from "../../buttton/Button";
 import { useEffect, useState } from "react";
 
+// STYLES
+import styles from "./LogoutButton.module.css";
+
 function LogoutButton({ customClass }) {
   const { logout } = useUser();
   const navigate = useNavigate();
@@ -24,8 +27,11 @@ function LogoutButton({ customClass }) {
     setProceedLogout(true);
   }
   return (
-    <Button handleClick={handleClick} customClass={customClass}>
-      logout
+    <Button
+      handleClick={handleClick}
+      customClass={`cta ${styles.logoutButton}`}
+    >
+      <span>logout</span>
     </Button>
   );
 }

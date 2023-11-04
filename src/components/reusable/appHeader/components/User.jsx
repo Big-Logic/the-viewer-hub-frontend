@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 // COMPONENTS
@@ -18,7 +18,24 @@ function User() {
     },
   } = useUser();
   const [optionDisplay, setOptionDisplay] = useState(false);
-  function handleClick() {
+
+  useEffect(
+    function () {
+      const documentBody = document.body;
+      function eventCb() {
+        setOptionDisplay((prev) => !prev);
+      }
+      if (optionDisplay) {
+        documentBody.addEventListener("click", eventCb);
+      }
+      return () => {
+        documentBody.removeEventListener("click", eventCb);
+      };
+    },
+    [optionDisplay]
+  );
+  function handleClick(e) {
+    e.stopPropagation();
     setOptionDisplay((prev) => !prev);
   }
   return (
@@ -45,12 +62,14 @@ function User() {
         }`}
       >
         <Link to="/user" className={styles.dropdownBtn}>
-          profile
+          <i className={`las la-user-alt ${styles.dropdownIcon}`}></i>
+          <span>profile</span>
         </Link>
         <Link to="/setting" className={styles.dropdownBtn}>
-          setting
+          <i className={`las la-cog ${styles.dropdownIcon}`}></i>
+          <span>setting</span>
         </Link>
-        <LogoutButton customClass={styles.dropdownBtn} />
+        <LogoutButton />
       </div>
     </div>
   );

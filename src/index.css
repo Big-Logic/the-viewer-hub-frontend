@@ -1,6 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,900&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,900&display=swap");
 :root {
   --primary-bg-color: #22668d;
+  --secondary-bg-color: #ffcc70;
   --primary-foreground-color: #fff;
   --text-color: #454545;
   --bold-text-color: #030a0e;
@@ -8,6 +10,7 @@
   --link-color: #4e85a4;
   --color-tint: #e9f0f4;
   --color-mid-tint: #bdd1dd;
+  --error-primary-color: #ff6969;
 }
 *,
 *::before,
@@ -34,6 +37,7 @@ button,
 textarea,
 select {
   font-size: 1.6rem;
+  letter-spacing: 1.1px;
   font-family: "Lato", sans-serif;
 }
 
