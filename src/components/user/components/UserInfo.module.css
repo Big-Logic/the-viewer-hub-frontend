@@ -1,0 +1,26 @@
+.container {
+  padding: 1rem 4%;
+}
+
+.container > * {
+  margin-bottom: 2rem;
+}
+
+.userName {
+  font-size: 3rem;
+}
+
+.items {
+  display: block;
+  font-size: 2rem;
+}
+
+.item {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.figure {
+  color: var(--bold-text-color);
+  font-weight: 700;
+}

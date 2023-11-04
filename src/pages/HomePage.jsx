@@ -1,7 +1,7 @@
 import AppFooter from "../components/reusable/appFooter/AppFooter";
 import AppHeader from "../components/reusable/appHeader/AppHeader";
 import useLoginedUser from "../hooks/useLoginedUser";
-import Login from "../components/auth/login/Login";
+
 import MainContainer from "../components/reusable/mainContainer/MainContainer";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
