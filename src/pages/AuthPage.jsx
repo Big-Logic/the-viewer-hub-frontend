@@ -5,18 +5,19 @@ import { useEffect } from "react";
 function AuthPage() {
   const [user, isLoading, error] = useLoginedUser();
   const navigate = useNavigate();
-  useEffect(function () {
-    if (user) {
-      navigate("/", { replace: true });
-    }
-  }, []);
+  useEffect(
+    function () {
+      if (user) {
+        navigate("/", { replace: true });
+      }
+    },
+    [user]
+  );
   return (
     <>
-      {!isLoading && !user && (
-        <MainContainer>
-          <Outlet />
-        </MainContainer>
-      )}
+      <MainContainer>
+        <Outlet />
+      </MainContainer>
     </>
   );
 }

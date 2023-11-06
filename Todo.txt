@@ -1,0 +1,3 @@
+UserProfile component
+Input component styling
+Handling onClick on edit button
